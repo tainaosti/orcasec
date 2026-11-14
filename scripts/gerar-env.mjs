@@ -5,8 +5,8 @@ import { existsSync, copyFileSync, writeFileSync } from 'node:fs';
 
 const destino = 'src/environments/environment.ts';
 const exemplo = 'src/environments/environment.example.ts';
-const url = process.env.SUPABASE_URL;
-const chave = process.env.SUPABASE_ANON_KEY;
+const url = process.env.SUPABASE_URL?.trim().replace(/\/+(rest\/v1\/?)?$/, '');
+const chave = process.env.SUPABASE_ANON_KEY?.trim();
 
 if (url && chave) {
   const conteudo =
