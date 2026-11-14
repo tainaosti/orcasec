@@ -13,12 +13,12 @@ import { Icone } from '../../shared/icone';
   styles: `
     .login { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
     .login__card { width: 100%; max-width: 420px; }
-    .login__marca { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: var(--texto); }
+    .login__marca { display: block; width: 240px; max-width: 100%; height: auto; margin-inline: auto; }
   `,
   template: `
     <main class="login">
       <section class="card login__card" aria-labelledby="titulo-login">
-        <div class="login__marca"><app-icone nome="escudo" [tamanho]="26" /> OrçaSec</div>
+        <img class="login__marca" src="logo-orcasec.png" alt="OrçaSec" width="640" height="222">
         <div>
           <h1 id="titulo-login" class="titulo">Entrar</h1>
           <p class="texto-suave">Use o e-mail e a senha cadastrados pelo gestor da empresa.</p>
