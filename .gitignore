@@ -43,8 +43,71 @@ __screenshots__/
 .DS_Store
 Thumbs.db
 
-# Configuração local do Supabase (gerada a partir do exemplo ou das variáveis de ambiente)
-/src/environments/environment.ts
+# ------------------------------------------------------------------
+# Segredos e configuração local — NUNCA versionar
+# ------------------------------------------------------------------
+
+# Configuração do Supabase (gerada a partir do exemplo ou das variáveis de ambiente).
+# Bloqueia qualquer variação (environment.ts, environment.prod.ts, environment.development.ts...)
+# e libera só o arquivo de exemplo.
+/src/environments/*
+!/src/environments/environment.example.ts
+
+# Variáveis de ambiente (libera apenas arquivos de exemplo)
 .env
 .env.*
+*.env
+!.env.example
+!.env.sample
+
+# Deploy e CLIs com tokens/credenciais
 .vercel
+.netlify
+.firebase/
+supabase/.temp/
+supabase/.branches/
+supabase/.env
+.npmrc
+.yarnrc
+.yarnrc.yml
+
+# Chaves, certificados e credenciais
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_ed25519*
+*credentials*.json
+*service-account*.json
+*serviceAccount*.json
+secrets.*
+*.secret
+*.secrets
+
+# Dumps e backups de banco (podem conter dados reais de usuários)
+*.dump
+*.backup
+*.bak
+*.sqlite
+*.sqlite3
+*.db
+dump*.sql
+backup*.sql
+
+# Logs (podem conter tokens, e-mails ou dados de requisições)
+*.log
+logs/
+pnpm-debug.log*
+lerna-debug.log*
+
+# Arquivos temporários e de sistema
+*.tmp
+*.swp
+*~
+desktop.ini
+.claude/
